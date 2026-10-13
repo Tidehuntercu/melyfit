@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-i18n="meta.title">Melissa Linares | Entrenadora personal en Miami y online</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="Entrenamiento personalizado para mujeres. Entrenamiento personal en Miami y online con Melissa Linares, entrenadora personal certificada.">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_US">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Melissa Linares | Entrenadora personal en Miami y online">
+  <meta property="og:description" content="Entrenamiento personal en Miami y online para mujeres. Construye fuerza, confianza y hábitos que puedas mantener.">
+  <link rel="icon" href="favicon.svg">
+  <link rel="preload" as="image" href="assets/melissa-portada-brazos-cruzados.jpeg">
+  <link rel="stylesheet" href="style.css">
+  <script src="content.js" defer></script>
+  <script src="i18n.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <!-- Textos en español aquí; la traducción al inglés está en i18n.js (misma clave data-i18n). -->
+  <header>
+    <a class="logo" href="#">MELISSA<span data-i18n="logo.tagline">LINARES / ENTRENADORA</span></a>
+    <nav aria-label="Navegación principal" data-i18n-attr="aria-label:nav.label">
+      <a href="#coaching" data-i18n="nav.services">Servicios</a>
+      <a href="#historia" data-i18n="nav.results">Transformaciones</a>
+      <div class="lang-toggle" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
+        <button type="button" data-lang="es" lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="navcta" href="#aplica" data-i18n="nav.cta">Trabajemos juntas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="hero.eyebrow">ENTRENADORA PERSONAL CERTIFICADA · MIAMI + ONLINE</div>
+        <h1 data-i18n="hero.title">CONSTRUYE TU CUERPO.<br><em>CONSTRUYE TU<br>CONFIANZA.</em></h1>
+        <p data-i18n="hero.text">Entrena con un plan que tenga sentido para ti. Construye fuerza, transforma tus hábitos y descubre lo que eres capaz de hacer.</p>
+        <a class="button" href="#aplica" data-i18n="hero.cta">Quiero entrenar contigo</a>
+        <div class="hero-note" data-i18n="hero.note">Tu objetivo. Tu ritmo. Mi acompañamiento.</div>
+      </div>
+      <div class="hero-media media" data-media="hero"></div>
+    </section>
+
+    <!-- Las secciones con fotos o video se ocultan solas hasta que se añadan los archivos en content.js -->
+    <section class="wrap intro" id="conoceme">
+      <div>
+        <div class="eyebrow" data-step data-i18n="intro.eyebrow">CONOCE A TU ENTRENADORA</div>
+        <h2 data-i18n="intro.title">Tu entrenadora.<br><em>En tu esquina.</em></h2>
+        <p data-i18n="intro.text">Soy Melissa, entrenadora personal certificada. Te ayudo a construir un cuerpo fuerte, una mentalidad segura y hábitos que se adapten a tu vida.</p>
+      </div>
+      <div class="media video-slot" data-media="intro"></div>
+    </section>
+
+    <section class="wrap compact-results" id="historia">
+      <div class="eyebrow" data-step data-i18n="results.eyebrow">TRANSFORMACIONES</div>
+      <h2 data-i18n="results.title">Trabajo real.<br><em>Progreso real.</em></h2>
+      <!-- Se rellena desde MELISSA_TRANSFORMATIONS en content.js -->
+      <div class="result-grid" id="transformations"></div>
+      <p class="fine" data-i18n="results.disclaimer">Cada proceso es individual; los resultados varían.</p>
+    </section>
+
+    <section class="wrap" id="coaching">
+      <div class="eyebrow" data-step data-i18n="coaching.eyebrow">TRABAJEMOS JUNTAS</div>
+      <h2 data-i18n="coaching.title">Tu entrenamiento.<br><em>Tu forma de avanzar.</em></h2>
+      <div class="service-grid">
+        <article class="service">
+          <div class="service-top"><span>01</span><span>MIAMI, FL</span></div>
+          <h3 data-i18n="inperson.title">Entrenamiento<br>personal 1:1</h3>
+          <p data-i18n="inperson.text">Entrena conmigo presencialmente, con atención a tu técnica y una rutina adaptada a tu nivel y objetivo.</p>
+          <ul>
+            <li data-i18n="inperson.li1">Sesiones de entrenamiento personal</li>
+            <li data-i18n="inperson.li2">Corrección de técnica en cada sesión</li>
+            <li data-i18n="inperson.li3">Seguimiento de pesos y repeticiones</li>
+            <li data-i18n="inperson.li4">Progresión y ajustes del programa</li>
+          </ul>
+          <button class="button dark" type="button" data-service="presencial" data-i18n="inperson.cta">Quiero entrenamiento presencial</button>
+        </article>
+        <article class="service online">
+          <div class="service-top"><span>02</span><span data-i18n="online.where">DESDE DONDE ESTÉS</span></div>
+          <h3 data-i18n="online.title">Entrenamiento<br>online</h3>
+          <p data-i18n="online.text">La distancia no limita tu progreso. Entrena conmigo desde donde estés con un plan personalizado y mi acompañamiento en cada etapa: soporte para tus dudas, videollamadas para revisar tu técnica y ajustes para seguir avanzando.</p>
+          <ul>
+            <li data-i18n="online.li1">Programa personalizado</li>
+            <li data-i18n="online.li2">Series, repeticiones y progresiones</li>
+            <li data-i18n="online.li3">Revisión de técnica por video</li>
+            <li data-i18n="online.li4">Revisiones periódicas y seguimiento de progreso</li>
+          </ul>
+          <button class="button" type="button" data-service="online" data-i18n="online.cta">Quiero entrenar online</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap nutrition-addon" id="alimentacion" aria-labelledby="nutrition-title">
+      <div class="addon-copy">
+        <span class="addon-badge" data-i18n="addon.badge">COMPLEMENTO OPCIONAL · COSTO ADICIONAL</span>
+        <h2 id="nutrition-title" data-i18n="addon.title">Hábitos de alimentación<br><em>que acompañen tu objetivo.</em></h2>
+        <p data-i18n="addon.text">Una alimentación que se adapte a tus gustos, horarios y objetivos. Te acompaño a organizar tus comidas, incorporar alimentos que disfrutes y desarrollar hábitos que apoyen tu bienestar y tu progreso, con un enfoque flexible y sostenible.</p>
+        <p class="addon-scope" data-i18n="addon.scope">Este servicio es opcional y se contrata con un costo adicional al entrenamiento presencial u online.</p>
+      </div>
+      <div class="addon-action">
+        <button class="button dark" type="button" id="nutrition-interest" data-i18n="addon.cta">Me interesa añadirlo</button>
+        <span data-i18n="addon.note">Consulta los detalles y el precio al hablar conmigo.</span>
+      </div>
+    </section>
+
+    <section class="wrap faq">
+      <div>
+        <div class="eyebrow" data-step data-i18n="faq.eyebrow">TUS DUDAS</div>
+        <h2 data-i18n="faq.title">Preguntas<br><em>frecuentes.</em></h2>
+      </div>
+      <div>
+        <details>
+          <summary data-i18n="faq.q1">¿Necesito experiencia entrenando?</summary>
+          <p data-i18n="faq.a1">No. El entrenamiento se adapta a tu nivel actual, incluso si estás empezando.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q2">¿Tengo que vivir en Miami?</summary>
+          <p data-i18n="faq.a2">Solo necesitas estar en Miami para las sesiones presenciales. De forma online te acompaño desde donde estés y, con constancia, puedes lograr resultados tan buenos como en persona.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q3">¿Cuántos días voy a entrenar?</summary>
+          <p data-i18n="faq.a3">Lo definimos según tus objetivos, experiencia y disponibilidad.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q4">¿Cuánto cuesta?</summary>
+          <p data-i18n="faq.a4">El precio depende del servicio y la frecuencia de entrenamiento. En nuestra conversación te explico las opciones antes de que decidas.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="wrap application" id="aplica">
+      <div>
+        <div class="eyebrow" data-step data-i18n="apply.eyebrow">DA EL PRIMER PASO</div>
+        <h2 data-i18n="apply.title">¿Entrenamos<br><em>juntas?</em></h2>
+        <p data-i18n="apply.text">Cuéntame qué quieres conseguir y cómo prefieres entrenar. Hablemos de un plan para ti.</p>
+      </div>
+      <form id="application-form">
+        <div class="fields">
+          <label><span data-i18n="form.name">Nombre</span><input name="name" required autocomplete="name" placeholder="Tu nombre" data-i18n-attr="placeholder:form.namePh"></label>
+          <label>Email<input name="email" required type="email" autocomplete="email" placeholder="tu@email.com" data-i18n-attr="placeholder:form.emailPh"></label>
+        </div>
+        <label><span data-i18n="form.contact">Instagram o teléfono</span><input name="contact" placeholder="@usuario o número" data-i18n-attr="placeholder:form.contactPh"></label>
+        <label><span data-i18n="form.service">¿Cómo quieres entrenar?</span>
+          <select name="service" required>
+            <option value="" data-i18n="form.serviceNone">Selecciona una opción</option>
+            <option value="presencial" data-i18n="form.serviceInPerson">Entrenamiento personal en Miami</option>
+            <option value="online" data-i18n="form.serviceOnline">Entrenamiento online</option>
+            <option value="duda" data-i18n="form.serviceUnsure">Todavía no estoy segura</option>
+          </select>
+        </label>
+        <label class="addon-checkbox">
+          <input type="checkbox" name="nutrition_addon" value="interesada">
+          <span data-i18n="form.addon">Me interesa añadir acompañamiento en hábitos de alimentación <small>Opcional · Se cotiza aparte del entrenamiento.</small></span>
+        </label>
+        <label><span data-i18n="form.goal">Tu objetivo principal</span>
+          <select name="goal" required>
+            <option value="" data-i18n="form.goalNone">Selecciona tu objetivo</option>
+            <option value="perder-grasa" data-i18n="form.goal1">Perder grasa</option>
+            <option value="ganar-musculo" data-i18n="form.goal2">Ganar músculo</option>
+            <option value="recomposicion" data-i18n="form.goal3">Recomposición corporal</option>
+            <option value="fuerza" data-i18n="form.goal4">Ganar fuerza</option>
+            <option value="habitos" data-i18n="form.goal5">Construir hábitos</option>
+            <option value="otro" data-i18n="form.goal6">Otro</option>
+          </select>
+        </label>
+        <label><span data-i18n="form.story">¿Dónde estás ahora y qué te gustaría conseguir?</span><textarea name="story" rows="4" required placeholder="Cuéntame un poquito sobre ti..." data-i18n-attr="placeholder:form.storyPh"></textarea></label>
+        <button class="button dark" type="submit" data-i18n="form.submit">Enviar solicitud</button>
+        <p class="fine" id="form-status" role="status" data-i18n="form.status">Tu solicitud se abrirá en WhatsApp para que la envíes.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <a href="#" class="logo">MELISSA<span data-i18n="logo.tagline">LINARES / ENTRENADORA</span></a>
+    <p data-i18n="footer.tagline">Miami, FL · Entrenamiento online<br>Cuerpo fuerte. Mente fuerte. Equilibrio real.</p>
+    <a href="https://wa.me/17863170943" data-whatsapp-link target="_blank" rel="noopener">WhatsApp</a>
+  </footer>
+</body>
+</html>

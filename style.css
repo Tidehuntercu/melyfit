@@ -1,0 +1,300 @@
+/* ==========================================================================
+   Melissa Linares · Personal Training & Online Coaching
+   ========================================================================== */
+
+:root {
+  --ink: #111111;
+  --ink-soft: #2b2b2b;
+  --paper: #f6f5f3;
+  --gray: #5c5c5c;
+  --line: #dcdbd8;
+  --surface: #ebeae7;
+  --accent: #66bfc7;      /* turquesa de marca: fondos de botón (texto negro) y titulares grandes */
+  --accent-dark: #4fb0b9;  /* hover de botones */
+  --accent-deep: #1f6b74;  /* texto pequeño y contornos sobre fondo claro (contraste legible) */
+  --serif: Georgia, serif;
+}
+
+/* Base ------------------------------------------------------------------- */
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 30px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+button, a, summary { touch-action: manipulation; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent-deep); outline-offset: 5px; }
+[hidden] { display: none !important; }
+
+h2 { font-size: clamp(36px, 4vw, 58px); line-height: 1.04; letter-spacing: -.045em; margin: 0 0 28px; font-weight: 800; }
+h2 em { font-family: var(--serif); font-weight: 400; }
+h3 { font-size: 23px; line-height: 1.25; letter-spacing: -.025em; margin: 0 0 14px; }
+p { margin: 0 0 20px; color: var(--gray); }
+
+.wrap { width: min(1240px, calc(100% - 96px)); margin-inline: auto; }
+section.wrap { padding-block: 60px; }
+.eyebrow { font-size: 12px; letter-spacing: .16em; font-weight: 700; margin-bottom: 24px; }
+/* Numeración automática (01 / 02 / …); las secciones ocultas no cuentan. */
+main { counter-reset: step; }
+.eyebrow[data-step]::before { counter-increment: step; content: counter(step, decimal-leading-zero) " / "; }
+.fine { font-size: 12px; line-height: 1.65; margin-top: 20px; }
+
+/* Buttons ---------------------------------------------------------------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 17px 23px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--accent);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .15s, background .15s;
+}
+.button:hover { background: var(--accent-dark); transform: translateY(-2px); }
+.button.dark { background: var(--ink); color: #fff; }
+.button.dark:hover { background: var(--ink-soft); }
+
+/* Header ----------------------------------------------------------------- */
+
+header {
+  width: min(1340px, calc(100% - 64px));
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 0;
+}
+.logo { font-size: 26px; font-weight: 900; letter-spacing: -1px; line-height: 1; }
+.logo span { display: block; font-size: 10px; letter-spacing: .22em; margin-top: 9px; }
+nav { display: flex; align-items: center; gap: 30px; font-size: 14px; }
+.navcta { border: 1px solid var(--accent-deep); color: var(--accent-deep); padding: 10px 18px; border-radius: 2px; }
+.lang-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 2px; }
+.lang-toggle button {
+  min-width: 38px;
+  padding: 7px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--gray);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+.lang-toggle button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+
+/* Media slots ------------------------------------------------------------ */
+
+.media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.media > img, .media > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Hero ------------------------------------------------------------------- */
+
+section.hero {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  gap: 36px;
+  align-items: center;
+  padding-top: 26px;
+  padding-bottom: 40px;
+}
+.hero h1 { font-size: clamp(40px, 5.2vw, 76px); font-weight: 900; letter-spacing: -.065em; line-height: .98; margin: 0 0 28px; }
+.hero h1 em { font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; line-height: 1.05; color: var(--accent); }
+.hero p { max-width: 440px; font-size: 18px; }
+.hero-note { font-size: 13px; margin-top: 18px; color: var(--gray); }
+
+/* Vertical (2:3) frame matching the portrait photo, so nothing is cropped or letterboxed. */
+.hero-media { width: min(100%, 480px); aspect-ratio: 2 / 3; justify-self: center; background: var(--ink); color: #fff; }
+
+/* Intro ------------------------------------------------------------------ */
+
+.intro { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; border-bottom: 1px solid var(--line); }
+.intro p { max-width: 430px; }
+.intro.is-text-only { grid-template-columns: 1fr; }
+.intro.is-text-only p { max-width: 640px; }
+.video-slot { aspect-ratio: 16 / 10; background: var(--ink); }
+.video-slot > video { object-fit: contain; }
+.video-slot.is-portrait { width: min(100%, 380px); justify-self: center; }
+
+/* Results ---------------------------------------------------------------- */
+
+.compact-results { border-bottom: 1px solid var(--line); }
+.result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 36px; }
+.result-grid h3 { font-size: 21px; margin-bottom: 18px; }
+.comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+/* Formato vertical: las fotos de cuerpo completo se recortan lo mínimo. */
+.compare-slot { aspect-ratio: 3 / 5; background: #dcdbd8; }
+.photo-label {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  padding: 9px 10px;
+  background: var(--paper);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-align: center;
+}
+.result-caption { font-size: 14px; margin: 15px 0 0; }
+
+/* Services --------------------------------------------------------------- */
+
+.service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 28px; }
+.service { display: flex; flex-direction: column; padding: 30px; background: var(--surface); }
+.service-top { display: flex; justify-content: space-between; margin-bottom: 22px; font-size: 12px; letter-spacing: .1em; font-weight: 700; }
+.service h3 { font-size: 45px; line-height: 1.04; }
+.service p { margin-top: 16px; }
+.service ul { list-style: none; padding: 0; margin: 8px 0 30px; }
+.service li { padding: 10px 0; border-top: 1px solid #00000019; font-size: 15px; }
+.service li::before { content: '✓'; margin-right: 12px; }
+.service .button { margin-top: auto; }
+.online { background: var(--ink); color: #fff; }
+.online p { color: #c4c4c4; }
+.online li { border-color: #ffffff24; }
+
+/* Nutrition add-on ------------------------------------------------------- */
+
+section.nutrition-addon {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 35px;
+  align-items: center;
+  padding: 32px 36px;
+  margin-bottom: 42px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 2px;
+}
+.addon-badge { display: inline-block; margin-bottom: 16px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: var(--accent-deep); }
+.nutrition-addon h2 { font-size: clamp(27px, 3vw, 39px); margin-bottom: 15px; }
+.nutrition-addon p { font-size: 16px; max-width: 670px; margin-bottom: 12px; }
+.nutrition-addon .addon-scope { font-size: 13px; margin-bottom: 0; }
+.addon-action { max-width: 240px; }
+.addon-action .button { width: 100%; }
+.addon-action > span { display: block; margin-top: 12px; font-size: 12px; line-height: 1.6; color: var(--gray); text-align: center; }
+
+/* FAQ -------------------------------------------------------------------- */
+
+section.faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; padding-top: 10px; }
+details { border-top: 1px solid var(--line); }
+details:last-child { border-bottom: 1px solid var(--line); }
+summary { padding: 22px 0; cursor: pointer; font-size: 16px; font-weight: 600; }
+details p { padding: 0 25px 5px 0; font-size: 15px; }
+
+/* Application form ------------------------------------------------------- */
+
+section.application { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; padding-top: 35px; }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+form label { display: block; margin-bottom: 20px; font-size: 14px; font-weight: 600; }
+input, select, textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #c8c6c2;
+  border-radius: 2px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 16px;
+}
+textarea { resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
+form .button { width: 100%; }
+form .addon-checkbox { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--accent); font-weight: 400; font-size: 14px; }
+form .addon-checkbox input { flex: 0 0 18px; width: 18px; height: 18px; margin: 3px 0 0; accent-color: var(--accent-deep); }
+form .addon-checkbox small { display: block; margin-top: 4px; font-size: 12px; color: var(--gray); }
+
+/* Footer ----------------------------------------------------------------- */
+
+footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 35px; border-top: 1px solid var(--line); }
+footer p, footer > a:last-child { font-size: 12px; margin: 0; }
+
+/* Responsive ------------------------------------------------------------- */
+
+@media (min-width: 1500px) {
+  .hero h1 { font-size: 78px; }
+}
+
+@media (max-width: 1000px) {
+  .wrap { width: calc(100% - 60px); }
+  .hero h1 { font-size: 52px; }
+  section.application { gap: 38px; }
+  section.faq { gap: 30px; }
+}
+
+@media (max-width: 720px) {
+  .wrap { width: calc(100% - 40px); }
+  section.wrap { padding-block: 40px; }
+  h2 { font-size: 39px; }
+
+  header { width: calc(100% - 40px); padding: 23px 0; }
+  .logo { font-size: 21px; }
+  .logo span { font-size: 9px; }
+  nav { gap: 10px; }
+  .lang-toggle button { min-width: 34px; padding: 6px; font-size: 11px; }
+  nav > a:not(.navcta) { display: none; }
+  .navcta { padding: 8px 10px; font-size: 12px; white-space: nowrap; }
+  .logo span { white-space: nowrap; }
+
+  section.hero { grid-template-columns: 1fr; gap: 30px; padding-top: 28px; }
+  .hero h1 { font-size: clamp(40px, 11.6vw, 70px); }
+  .hero .eyebrow { font-size: 10px; letter-spacing: .08em; }
+  .hero p { font-size: 17px; }
+  .hero-media { width: 100%; }
+
+  .intro, section.application, section.faq { grid-template-columns: 1fr; }
+  .intro { gap: 22px; }
+
+  .result-grid { grid-template-columns: 1fr; gap: 28px; }
+  .comparison { gap: 9px; }
+  .photo-label { left: 8px; right: 8px; bottom: 8px; padding: 7px; font-size: 10px; }
+
+  .service-grid { grid-template-columns: 1fr; }
+  .service { padding: 25px; }
+  .service h3 { font-size: 38px; }
+
+  section.nutrition-addon { grid-template-columns: 1fr; gap: 20px; padding: 25px 20px; margin-bottom: 30px; }
+  .nutrition-addon h2 { font-size: 30px; }
+  .addon-action { max-width: none; }
+  .addon-action > span { text-align: left; }
+
+  section.faq { gap: 14px; padding-bottom: 28px; }
+  section.application { gap: 18px; }
+  .fields { grid-template-columns: 1fr; gap: 0; }
+
+  footer { flex-direction: column; align-items: flex-start; }
+}
+
+/* Teléfonos estrechos: logo + idioma; el botón de la portada ya lleva al formulario. */
+@media (max-width: 400px) {
+  .navcta { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+  .button:hover { transform: none; }
+}
